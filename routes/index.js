@@ -11,7 +11,7 @@ router.get('/', function(req, res, next) {
 router.post('/', function (req, res, next) {
 console.log("req", req.body.zip);
 
-unirest.get('http://iaspub.epa.gov/enviro/efservice/getEnvirofactsUVHOURLY/ZIP/80306/JSON')
+unirest.get('http://iaspub.epa.gov/enviro/efservice/getEnvirofactsUVHOURLY/ZIP/' + req.body.zip + '/JSON')
 .end(function (response) {
   var UV_Value = response.body;
   res.render('locations', {data: UV_Value});
