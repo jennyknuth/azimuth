@@ -11,7 +11,7 @@ router.get('/', function(req, res, next) {
 
 /* POST */
 router.post('/UV', function (req, res, next) {
-  unirest.get('http://iaspub.epa.gov/enviro/efservice/getEnvirofactsUVHOURLY/ZIP/' + req.body.zip + '/JSON')
+  unirest.get('https://iaspub.epa.gov/enviro/efservice/getEnvirofactsUVHOURLY/ZIP/' + req.body.zip + '/JSON')
   .end(function (response) {
     var time = new Date
     var hour = time.getHours();
