@@ -1,8 +1,171 @@
-body {
-  padding: 50px;
-  font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
+@import url(http://fonts.googleapis.com/css?family=Lato:400,300,100,700);
+
+* {
+  box-sizing: border-box;
 }
+
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed,
+figure, figcaption, footer, header, hgroup,
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	font-size: 100%;
+	font: inherit;
+	vertical-align: baseline;
+}
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure,
+footer, header, hgroup, menu, nav, section {
+	display: block;
+}
+body {
+	line-height: 1;
+}
+ol, ul {
+	list-style: none;
+}
+blockquote, q {
+	quotes: none;
+}
+blockquote:before, blockquote:after,
+q:before, q:after {
+	content: '';
+	content: none;
+}
+table {
+	border-collapse: collapse;
+	border-spacing: 0;
+}
+
+body {
+  background-image: url('../images/sun-yellow.jpg');
+  background-size: cover;
+}
+
+main {
+  width: 900px;
+  display: block;
+  margin: 50px auto;
+  position: relative;
+  height: 700px;
+}
+
+svg {
+  position: absolute;
+  left: 50%;
+  margin-left: -200px;
+  top: 250px;
+
+}
+
+
+h1 {
+  font-family: 'Lato';
+  font-size: 48px;
+  color: #fff;
+  font-weight: 100;
+  text-align: center;
+  text-transform: uppercase;
+  letter-spacing: 4px;
+}
+
+h2 {
+  text-align: center;
+  font-family: 'lato';
+  font-size: 20px;
+  color: #fff;
+  font-weight: 300;
+  margin-bottom: 12px;
+  text-transform: uppercase;
+}
+
+
+form {
+  text-align: center;
+  width: 400px;
+  margin: 24px auto;
+  padding: 20px;
+  border: 1px solid #fff;
+}
+
+input[type=text] {
+  border: none;
+  width: 200px;
+  padding: 12px;
+}
+
+input[type=submit] {
+  border: none;
+  padding: 12px;
+  background: #FD5D25;
+  color: #fff;
+  outline: none;
+}
+
+input[type=submit]:hover {
+  background: #e24008;
+}
+
+
+
+
+.color {
+  height: 100%;
+  width: 100%;
+  position: fixed;
+  top: 0;
+
+  /* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#f4dc00+0,fff72b+100&0.82+0,0+100 */
+background: -moz-radial-gradient(center, ellipse cover, rgba(244,220,0,0.82) 0%, rgba(255,247,43,0) 100%); /* FF3.6+ */
+background: -webkit-gradient(radial, center center, 0px, center center, 100%, color-stop(0%,rgba(244,220,0,0.82)), color-stop(100%,rgba(255,247,43,0))); /* Chrome,Safari4+ */
+background: -webkit-radial-gradient(center, ellipse cover, rgba(244,220,0,0.82) 0%,rgba(255,247,43,0) 100%); /* Chrome10+,Safari5.1+ */
+background: -o-radial-gradient(center, ellipse cover, rgba(244,220,0,0.82) 0%,rgba(255,247,43,0) 100%); /* Opera 12+ */
+background: -ms-radial-gradient(center, ellipse cover, rgba(244,220,0,0.82) 0%,rgba(255,247,43,0) 100%); /* IE10+ */
+background: radial-gradient(ellipse at center, rgba(244,220,0,0.82) 0%,rgba(255,247,43,0) 100%); /* W3C */
+filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#d1f4dc00', endColorstr='#00fff72b',GradientType=1 ); /* IE6-9 fallback on horizontal gradient */
+
+
+}
+
 
 a {
   color: #00B7FF;
+}
+
+path {
+  fill: none;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}
+
+.sphere {
+  stroke: #fff;
+  stroke-width: 1.5px;
+}
+
+.graticule {
+  stroke: #777;
+  stroke-opacity: .5;
+}
+
+.solar-path {
+  stroke: #f00;
+  stroke-width: 2px;
+  stroke-linecap: round;
+}
+
+.sun {
+  fill: red;
+  //stroke: #000;
 }

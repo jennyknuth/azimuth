@@ -11,6 +11,6 @@ button.addEventListener('click', function(e) {
     })
     .then(function (response) {
       console.log(response)
-      uv.innerHTML = response.data[0].UV_VALUE
+      uv.innerHTML = 'The U.V. index right now is: ' + response.data.UV
     })
 })
