@@ -10,7 +10,7 @@ router.get('/', function(req, res, next) {
     res.render('locations', {data: UV_Value});
     console.log(UV_Value);
   })
-  res.render('locations');
+  res.send('yo. make a locations view');
 });
 
 
