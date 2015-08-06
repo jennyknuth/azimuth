@@ -1,4 +1,4 @@
-@import url(http://fonts.googleapis.com/css?family=Lato:400,300,100,700);
+@import url(https://fonts.googleapis.com/css?family=Lato:400,300,100,700);
 
 * {
   box-sizing: border-box;
@@ -151,11 +151,11 @@ path {
 
 .sphere {
   stroke: #fff;
-  stroke-width: 1.5px;
+  stroke-width: 2px;
 }
 
 .graticule {
-  stroke: #777;
+  stroke: #fff;
   stroke-opacity: .5;
 }
 
@@ -168,4 +168,58 @@ path {
 .sun {
   fill: red;
   //stroke: #000;
+  stroke-width: 10px;
+}
+
+.uv-levels {
+  width: 50px;
+  height: 250px;
+  position: absolute;
+  right: 0;
+}
+
+.uv-levels .square:nth-child(1) {
+  background:#FF001C;
+  height: 50px;
+}
+
+.uv-levels .square:nth-child(2) {
+  background:#ff8200;
+  height: 50px;
+}
+
+.uv-levels .square:nth-child(3) {
+  background:#ffde00;
+  height: 50px;
+}
+
+.uv-levels .square:nth-child(4) {
+  background:#4ec108;
+  height: 50px;
+}
+
+.uv-levels .square:nth-child(5) {
+  background:#16a29a;
+  height: 50px;
+}
+
+.uv-levels-header {
+  position: absolute;
+  right: 70px;
+  text-align: right;
+  color: #fff;
+  font-family: 'lato';
+}
+
+.uv-levels .square {
+  font-family: 'lato';
+  text-align: center;
+  padding: 16px;
+  color: #fff;
+  font-weight: 300;
+  }
+
+#uv-info {
+  display: none;
+  font-weight: 800;
 }
