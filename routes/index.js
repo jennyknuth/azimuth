@@ -1,8 +1,8 @@
 var express = require('express');
 var router = express.Router();
 var unirest = require('unirest');
-var db = require('monk')(process.env.MONGLAB_URI)
-var locations = db.get('locations')
+// var db = require('monk')(process.env.MONGLAB_URI);
+// var locations = db.get('locations');
 
 /* GET home page. */
 router.get('/', function(req, res, next) {
