@@ -9,6 +9,7 @@ router.get('/', function(req, res, next) {
 
 /* POST */
 router.post('/UV', function (req, res, next) {
+
 unirest.get('http://iaspub.epa.gov/enviro/efservice/getEnvirofactsUVHOURLY/ZIP/' + req.body.zip + '/JSON')
 .end(function (response) {
   var time = new Date
@@ -26,12 +27,18 @@ unirest.get('http://iaspub.epa.gov/enviro/efservice/getEnvirofactsUVHOURLY/ZIP/'
       UV_Value = block.UV_VALUE
     }
   })
-  res.json(UV_Value);
+  unirest.get('https://maps.googleapis.com/maps/api/geocode/json?address=' + req.body.zip + '&components=postal_code&key=AIzaSyDUbsioa0pOqLv4QGeZBRfdUqizxn0B934')
+  .end(function (response) {
+    var lat = response.body.results[0].geometry.location.lat
+    var long = response.body.results[0].geometry.location.lng
+    console.log('lat', lat);
+    console.log('long', long);
+    console.log(UV_Value);
+    res.json({UV: UV_Value, lat: lat, long: long});
+  })
+  // res.json(UV_Value);
 })
-  // unirest.get('https://maps.googleapis.com/maps/api/geocode/json?address=' + req.body.zip + '&components=postal_code&key=AIzaSyDUbsioa0pOqLv4QGeZBRfdUqizxn0B934')
-  // .end(function (response) {
-  //   var lat = respons
-  // })
+
 })
 
 
