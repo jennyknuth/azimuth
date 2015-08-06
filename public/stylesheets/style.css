@@ -176,6 +176,7 @@ path {
   height: 250px;
   position: absolute;
   right: 0;
+
 }
 
 .uv-levels .square:nth-child(1) {
@@ -209,6 +210,7 @@ path {
   text-align: right;
   color: #fff;
   font-family: 'lato';
+  font-weight: 300;
 }
 
 .uv-levels .square {

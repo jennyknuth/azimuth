@@ -24,16 +24,26 @@ button.addEventListener('click', function(e) {
       var uvColor = document.getElementById('uv-color')
 
       if (response.data.UV <= 2)  {
-        uvColor.style.color = '#FF001C'
-      } else if (response.data.UV < 5) {
-        uvColor.style.color = '#ff8200'
-      } else if (response.data.UV <= 7) {
-        uvColor.style.color = '#ffde00'
+        uvColor.style.color = '#fff'
+        uvColor.style.padding = '5px 10px'
+        uvColor.style.background = '#16a29a'
 
+      } else if (response.data.UV < 5) {
+        uvColor.style.color = '#fff'
+        uvColor.style.padding = '5px 10px'
+        uvColor.style.background = '#4ec108'
+      } else if (response.data.UV <= 7) {
+        uvColor.style.color = '#fff'
+        uvColor.style.padding = '5px 10px'
+        uvColor.style.background = '#ffde00'
       } else if (response.data.UV <= 10) {
-        uvColor.style.color = '#ff8200'
+        uvColor.style.color = '#fff'
+        uvColor.style.padding = '5px 10px'
+        uvColor.style.background = '#ff8200'
       } else {
-        uvColor.style.color = '#FF001C'
+        uvColor.style.color = '#fff'
+        uvColor.style.padding = '5px 10px'
+        uvColor.style.background = '#FF001C'
       }
       lat = response.data.lat;
       long = response.data.long;
