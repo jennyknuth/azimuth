@@ -6,11 +6,12 @@ router.get('/', function(req, res, next) {
   res.render('index', { title: 'Sun Dial' });
 });
 
-
 /* POST */
 router.post('/', function (req, res, next) {
 console.log("req", req.body.zip);
+
  res.redirect('/')
+
 })
 
 
