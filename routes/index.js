@@ -9,14 +9,22 @@ router.get('/', function(req, res, next) {
 
 /* POST */
 router.post('/UV', function (req, res, next) {
-console.log("req", req.body.zip);
 unirest.get('http://iaspub.epa.gov/enviro/efservice/getEnvirofactsUVHOURLY/ZIP/' + req.body.zip + '/JSON')
 .end(function (response) {
+console.log("req", req.body);
   var UV_Value = response.body;
   res.render('locations', {data: UV_Value});
   console.log(UV_Value);
-  res.json(UV_Value
+  res.json(UV_Value);
 })
+  // unirest.get('https://maps.googleapis.com/maps/api/geocode/json?address=' + req.body.zip + '&components=postal_code&key=AIzaSyDUbsioa0pOqLv4QGeZBRfdUqizxn0B934')
+  // .end(function (response) {
+  //   var lat = respons
+  // })
+})
+
+
+
 
 
 
