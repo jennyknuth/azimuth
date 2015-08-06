@@ -10,14 +10,12 @@ router.get('/', function(req, res, next) {
 /* POST */
 router.post('/UV', function (req, res, next) {
 console.log("req", req.body.zip);
-
-  unirest.get('http://iaspub.epa.gov/enviro/efservice/getEnvirofactsUVHOURLY/ZIP/80306/JSON')
-  .end(function (response) {
-    var UV_Value = response.body;
-    res.render('locations', {data: UV_Value});
-    console.log(UV_Value);
-    res.json(UV_Value)
-  })
+unirest.get('http://iaspub.epa.gov/enviro/efservice/getEnvirofactsUVHOURLY/ZIP/' + req.body.zip + '/JSON')
+.end(function (response) {
+  var UV_Value = response.body;
+  res.render('locations', {data: UV_Value});
+  console.log(UV_Value);
+  res.json(UV_Value
 })
 
 
