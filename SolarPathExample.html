@@ -41,9 +41,17 @@ var π = Math.PI,
 var width = 960,
     height = 960;
 
+var today = new Date(),
+    year = parseInt('20' + (today.getYear() - 100), 10),
+    month = today.getMonth(),
+    day1 =  today.getDate(),
+    hours = today.getHours(),
+    min = today.getMinutes()
+
+console.log(year)
 // December 21, 2014 in Boulder, CO
-var date = new Date(2014, 12, 21, 0, 0),
-    now = new Date(2014, 12, 21, 10, 28),
+var date = new Date(year, month, day1, hours, min),
+    now = new Date(year, month, day1, hours, min),
     zone = -7, // GMT offset in hours IGNORING daylight savings time
     dst = true, // whether daylight savings time is in effect
     latitude = 40,

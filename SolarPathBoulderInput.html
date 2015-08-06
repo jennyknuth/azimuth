@@ -108,13 +108,15 @@ var year = parseInt(document.getElementById('year').value),
 
 
 // December 21, 2014 in Boulder, CO
+
+
 var date = new Date(year, month-1, day, hour, min),
     now = new Date(year, month-1, day, hour, min),
     zone = GMT, // GMT offset in hours IGNORING daylight savings time
     dst = true, // whether daylight savings time is in effect
     latitude = lat,
     longitude = long;
-	
+
 var projection = d3.geo.azimuthalEquidistant()
     .scale(width * .31)
     .rotate([0, -90

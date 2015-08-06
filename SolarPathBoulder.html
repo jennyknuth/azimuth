@@ -45,12 +45,13 @@ var width = 900,
     height = 900;
 
 // December 21, 2014 in Boulder, CO
-var date = new Date(2014, 12, 21, 0, 0),
-    now = new Date(2014, 12, 21, 10, 28),
+var date = new Date(2014, 12, 21, 13, 0),
+    // now = new Date(2014, 12, 21, 10, 28),
     zone = -7, // GMT offset in hours IGNORING daylight savings time
     dst = true, // whether daylight savings time is in effect
     latitude = 40,
     longitude = -105;
+
 
 var projection = d3.geo.azimuthalEquidistant()
     .scale(width * .31)
