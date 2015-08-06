@@ -5,12 +5,11 @@ var uv = document.getElementById('uv')
 
 button.addEventListener('click', function(e) {
   e.preventDefault()
-  console.log(zip.value)
   axios.post('/UV', {
       zip: zip.value
     })
     .then(function (response) {
       console.log(response)
-      uv.innerHTML = response.data[0].UV_VALUE
+      uv.innerHTML = response.data
     })
 })

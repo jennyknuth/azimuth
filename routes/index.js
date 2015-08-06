@@ -11,10 +11,21 @@ router.get('/', function(req, res, next) {
 router.post('/UV', function (req, res, next) {
 unirest.get('http://iaspub.epa.gov/enviro/efservice/getEnvirofactsUVHOURLY/ZIP/' + req.body.zip + '/JSON')
 .end(function (response) {
- console.log("req", req.body);
-  console.log(response)
-  var UV_Value = response.body;
-  console.log(UV_Value);
+  var time = new Date
+  var hour = time.getHours();
+  var epaApi = response.body // an array
+  var UV_Value = 0
+  epaApi.forEach(function(block) {
+    var epaTime = block.DATE_TIME
+    epaTime = epaTime.split(' ')
+    epaHour = epaTime[1]
+    if (epaTime[2] === "PM") {
+      epaHour = parseInt(epaHour) + 12
+    }
+    if (epaHour === hour) {
+      UV_Value = block.UV_VALUE
+    }
+  })
   res.json(UV_Value);
 })
   // unirest.get('https://maps.googleapis.com/maps/api/geocode/json?address=' + req.body.zip + '&components=postal_code&key=AIzaSyDUbsioa0pOqLv4QGeZBRfdUqizxn0B934')
