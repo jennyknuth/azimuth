@@ -5,8 +5,9 @@ var uv = document.getElementById('uv')
 
 button.addEventListener('click', function(e) {
   e.preventDefault()
+  console.log(zip.value)
   axios.post('/UV', {
-      button: button.value
+      zip: zip.value
     })
     .then(function (response) {
       console.log(response)
