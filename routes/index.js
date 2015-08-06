@@ -8,12 +8,10 @@ router.get('/', function(req, res, next) {
 
 
 /* POST */
-router.post('/UV', function (req, res, next) {
-console.log("res", res.body);
-console.log("req", req.body);
-  res.redirect('/')
+router.post('/', function (req, res, next) {
+console.log("req", req.body.zip);
+ res.redirect('/')
 })
-
 
 
 
