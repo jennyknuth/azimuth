@@ -1,0 +1,28 @@
+path {
+  fill: none;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}
+
+.sphere {
+  stroke: #000;
+  stroke-width: 1px;
+}
+
+.graticule {
+  stroke: #777;
+  stroke-opacity: .5;
+  stroke-width: .5px;
+}
+
+.solar-path {
+  stroke: #f00;
+  stroke-width: 1.5px;
+  stroke-linecap: round;
+}
+
+.sun {
+  fill: orange;
+  stroke-width: 3px;
+  stroke: orange;
+}
