@@ -54,7 +54,7 @@ body {
 }
 
 main {
-  width: 900px;
+  width: 800px;
   display: block;
   margin: 50px auto;
   position: relative;
@@ -90,10 +90,25 @@ h2 {
   text-transform: uppercase;
 }
 
+p {
+  color: #fff;
+  font-family: 'lato';
+  font-size: 20px;
+  width: 410px;
+  margin: 0 auto;
+  font-weight: 300;
+  line-height: 1.2;
+}
+
+p span {
+  color: red;
+  display: block;
+  text-align: center;
+}
 
 form {
   text-align: center;
-  width: 400px;
+  width: 410px;
   margin: 24px auto;
   padding: 20px;
   border: 1px solid #fff;
@@ -108,13 +123,14 @@ input[type=text] {
 input[type=submit] {
   border: none;
   padding: 12px;
-  background: #FD5D25;
+  background: #ff8200;
   color: #fff;
   outline: none;
 }
 
 input[type=submit]:hover {
-  background: #e24008;
+  background: #ff901c;
+  cursor: pointer;
 }
 
 
@@ -206,7 +222,7 @@ path {
 
 .uv-levels-header {
   position: absolute;
-  right: 70px;
+  right: 60px;
   text-align: right;
   color: #fff;
   font-family: 'lato';
@@ -224,4 +240,47 @@ path {
 #uv-info {
   display: none;
   font-weight: 800;
+  position: relative;
+}
+
+@media (max-width: 860px) {
+  main {
+    width: 90%;
+    margin: 0 auto;
+  }
+}
+
+@media (max-width: 760px) {
+ .uv-levels-header {
+   position: relative;
+ }
+ .uv-levels {
+    width: 250px;
+    height: 50px;
+    position: relative;
+    right: 0;
+  }
+  .uv-levels .square {
+    height: 50px;
+    width: 50px;
+    display: block;
+    float: left;
+  }
+  svg {
+    top: 350px;
+  }
+
+  #uv-info {
+    width: 250px;
+    margin: 0 auto;
+  }
+  .uv-levels-header {
+    right: 0;
+    margin-bottom: 6px;
+    display: block;
+    text-align: left;
+  }
+  .uv-levels-header br {
+    display: none;
+  }
 }
