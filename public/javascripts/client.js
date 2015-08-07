@@ -24,8 +24,6 @@ button.addEventListener('click', function (e) {
     zip: zip.value
   })
     .then(function (response) {
-      console.log(response)
-
       uv.innerHTML = 'The U.V. index right now is: <span id="uv-color">' + response.data.UV + '</span>'
       var uvColor = document.getElementById('uv-color')
 
@@ -59,6 +57,14 @@ button.addEventListener('click', function (e) {
 
       var width = 400,
         height = 400
+
+        window.onresize = function() {
+          if (window.innerWidth < 450) {
+            width = 300
+            height = 300
+          }
+        }
+
 
       var today = new Date(),
         year = parseInt('20' + (today.getYear() - 100), 10),
@@ -217,3 +223,8 @@ button.addEventListener('click', function (e) {
 
     })
 })
+
+
+// function windowWidth() {
+//
+// }
