@@ -2,8 +2,6 @@ var express = require('express');
 var router = express.Router();
 var unirest = require('unirest');
 var axios = require('axios')
-// var db = require('monk')(process.env.MONGLAB_URI);
-// var locations = db.get('locations');
 
 /* GET home page. */
 router.get('/', function(req, res, next) {
@@ -27,11 +25,22 @@ router.post('/UV', function (req, res, next) {
     epa.forEach(function(block) {
       var epaTime = block.DATE_TIME
       epaTime = epaTime.split(' ')
+      console.log(epaTime)
       epaHour = parseInt(epaTime[1], 10)
-      if (epaTime[2] === "PM") {
-        epaHour = epaHour + 12
+      console.log('parsed hour', epaHour);
+      if ((epaTime[2] === "PM" && epaHour !=12) || (epaTime[2] ==="AM" && epaHour ===12) ) {
+
+          epaHour = epaHour + 12
+          console.log(epaHour)
+
+
+
+        // if (epaHour === 24) {
+        //   epaHour = 12
+        // }
       }
       if (epaHour === hour) {
+        console.log('time now', epaHour);
         UV_Value = block.UV_VALUE
         console.log('hi', UV_Value)
       }

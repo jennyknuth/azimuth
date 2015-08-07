@@ -30,7 +30,6 @@
     "iconv-lite": "^0.4.11",
     "merge-descriptors": "^1.0.0",
     "methods": "^1.1.1",
-    "monk": "^1.0.1",
     "morgan": "~1.6.1",
     "on-finished": "^2.3.0",
     "on-headers": "^1.0.0",
