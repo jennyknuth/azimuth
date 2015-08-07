@@ -8,11 +8,24 @@ var unirest = require('unirest');
 router.get('/', function(req, res, next) {
   res.render('index', { title: 'Sun Dial' });
 });
+//
+// var zip = unirest.get('http://iaspub.epa.gov/enviro/efservice/getEnvirofactsUVHOURLY/ZIP/' + req.body.zip + '/JSON')
+// var latlong = unirest.get('https://maps.googleapis.com/maps/api/geocode/json?address=' + req.body.zip + '&components=postal_code&key=' + process.env.GOOGLE_KEY)
+//
+// Promise.all([zip, latlong])
+// .then(function(values) {
+//   values[0]
+// }).catch(function(errors) {
+//   console.log(errors[0])
+//   console.log(errors[1])
+// })
+
 
 /* POST */
 router.post('/UV', function (req, res, next) {
   unirest.get('http://iaspub.epa.gov/enviro/efservice/getEnvirofactsUVHOURLY/ZIP/' + req.body.zip + '/JSON')
   .end(function (response) {
+    
     var time = new Date
     var hour = time.getHours();
     var epaApi = response.body // an array
