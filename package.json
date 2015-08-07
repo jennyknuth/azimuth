@@ -8,6 +8,7 @@
   "dependencies": {
     "accepts": "^1.2.12",
     "array-flatten": "^1.1.1",
+    "axios": "^0.5.4",
     "basic-auth": "^1.0.3",
     "body-parser": "~1.13.1",
     "bytes": "^2.1.0",
