@@ -11,7 +11,7 @@ router.get('/', function(req, res, next) {
 
 
 router.post('/UV', function (req, res, next) {
-  var zip = axios.get('https://iaspub.epa.gov/enviro/efservice/getEnvirofactsUVHOURLY/ZIP/' + req.body.zip + '/JSON')
+  var zip = axios.get('http://iaspub.epa.gov/enviro/efservice/getEnvirofactsUVHOURLY/ZIP/' + req.body.zip + '/JSON')
   var latlong = axios.get('https://maps.googleapis.com/maps/api/geocode/json?address=' + req.body.zip + '&components=postal_code&key=' + process.env.GOOGLE_KEY)
 
   Promise.all([zip, latlong])
