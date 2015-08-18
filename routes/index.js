@@ -8,8 +8,6 @@ router.get('/', function(req, res, next) {
   res.render('index', { title: 'Sun Dial' });
 });
 
-
-
 router.post('/UV', function (req, res, next) {
   var zip = axios.get('http://iaspub.epa.gov/enviro/efservice/getEnvirofactsUVHOURLY/ZIP/' + req.body.zip + '/JSON')
   var latlong = axios.get('https://maps.googleapis.com/maps/api/geocode/json?address=' + req.body.zip + '&components=postal_code&key=' + process.env.GOOGLE_KEY)
@@ -18,7 +16,7 @@ router.post('/UV', function (req, res, next) {
   .then(function(values) {
     var epa = values[0].data
     var geocode = values[1].data
-    var time = new Date
+    var time = new Date()
     var hour = time.getHours();
     var UV_Value = 0;
 
