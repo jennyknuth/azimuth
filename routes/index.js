@@ -26,7 +26,7 @@ router.post('/UV', function (req, res, next) {
       console.log(epaTime)
       epaHour = parseInt(epaTime[1], 10)
       console.log('parsed hour', epaHour);
-      if ((epaTime[2] === "PM" && epaHour !=12) || (epaTime[2] ==="AM" && epaHour ===12) ) {
+      if ((epaTime[2] === "PM" && epaHour != 12) || (epaTime[2] ==="AM" && epaHour === 12) ) {
 
           epaHour = epaHour + 12
           console.log(epaHour)
