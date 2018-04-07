@@ -1,7 +1,7 @@
 var zip = document.getElementById('zip')
 var button = document.getElementById('button')
 var uv = document.getElementById('uv')
-var azumuth = document.getElementById('azumuth')
+var azimuth = document.getElementById('azimuth')
 var uvInfo = document.getElementById('uv-info')
 var intro = document.getElementById('intro')
 
@@ -13,12 +13,12 @@ button.addEventListener('click', function (e) {
   if (zip.value.length === 5 && /^\d+$/.test(zip.value)) {
   } else {
     intro.innerHTML = '<span>please add a valid zip!<span>'
-    return
+    return;
   }
 
   intro.innerHTML = ''
   uvInfo.style.display = 'block'
-  azumuth.innerHTML = ''
+  azimuth.innerHTML = ''
 
   axios.post('/UV', {
     zip: zip.value
@@ -91,7 +91,7 @@ button.addEventListener('click', function (e) {
       var path = d3.geo.path()
         .projection(projection)
 
-      var svg = d3.select('#azumuth').append('svg')
+      var svg = d3.select('#azimuth').append('svg')
         .attr('width', width)
         .attr('height', height)
         .append('g')
